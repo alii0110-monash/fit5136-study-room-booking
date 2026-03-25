@@ -1,0 +1,2 @@
+room_id,name,capacity,price_per_hour,equipment
+101,TEST,65536,1.0,"ball,desktop"

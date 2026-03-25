@@ -1,0 +1,2 @@
+booking_id,student_id,room_id,date,start_time,end_time,total_price,status
+FD67010E,1,101,2077-03-12,12:30,13:30,1.0,confirmed
