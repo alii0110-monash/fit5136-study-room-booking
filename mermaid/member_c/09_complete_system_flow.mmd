@@ -1,0 +1,68 @@
+flowchart TB
+    subgraph START["[START HERE] Screen 1: Welcome"]
+        W1["FIT5136 Study Room Booking System<br>1. Register<br>2. Login<br>0. Exit"]
+    end
+
+    subgraph REGISTER["Registration"]
+        R1["✓ 注册成功，已为您发放 50 积分初始体验金<br>Press Enter to continue..."]
+    end
+
+    subgraph LOGIN["Login"]
+        L1["[ERROR] Invalid credentials<br>Press Enter to continue..."]
+    end
+
+    subgraph STUDENT["Student Flow"]
+        SM["Student Main Menu<br>1. Book Room<br>2. View Rooms<br>3. View Account<br>4. Checkout<br>0. Logout"]
+        BOOK["Screen 4: Book Room"]
+        ACCOUNT["Screen 3: Account Details"]
+        CHECKOUT["Screen 5: Checkout"]
+        VIEW_ROOMS["View All Rooms"]
+    end
+
+    subgraph ADMIN["Admin Flow"]
+        AM["Admin Main Menu<br>1. Add Room<br>2. Delete Room<br>3. View Rooms<br>4. View Bookings<br>0. Logout"]
+        ADD["Screen 7: Add Room"]
+        DELETE["Screen 8: Delete Room"]
+    end
+
+    START -->|"1"| REGISTER
+    START -->|"2"| LOGIN
+    START -->|"0"| EXIT["Exit"]
+
+    REGISTER --> R1
+    R1 -->|"Enter"| START
+
+    LOGIN -->|"Student"| SM
+    LOGIN -->|"Admin"| AM
+
+    SM -->|"1"| BOOK
+    SM -->|"2"| VIEW_ROOMS
+    SM -->|"3"| ACCOUNT
+    SM -->|"4"| CHECKOUT
+    SM -->|"0"| START
+
+    BOOK -->|"0"| SM
+    ACCOUNT -->|"0"| SM
+    CHECKOUT -->|"0"| SM
+    VIEW_ROOMS -->|"Enter"| SM
+
+    AM -->|"1"| ADD
+    AM -->|"2"| DELETE
+    AM -->|"3"| VIEW_ROOMS_ADMIN["View All Rooms"]
+    AM -->|"4"| VIEW_BOOKINGS["View All Bookings"]
+    AM -->|"0"| START
+
+    ADD -->|"0"| AM
+    DELETE -->|"0"| AM
+
+    style START fill:#90EE90,stroke:#228B22,stroke-width:3px
+    style R1 fill:#90EE90,stroke:#228B22
+    style SM fill:#87CEEB,stroke:#4169E1
+    style AM fill:#FFB6C1,stroke:#DC143C
+    style LOGIN fill:#FFB6C1,stroke:#DC143C
+    style BOOK fill:#87CEEB,stroke:#4169E1
+    style ACCOUNT fill:#87CEEB,stroke:#4169E1
+    style CHECKOUT fill:#87CEEB,stroke:#4169E1
+    style VIEW_ROOMS fill:#87CEEB,stroke:#4169E1
+    style ADD fill:#FFB6C1,stroke:#DC143C
+    style DELETE fill:#FFB6C1,stroke:#DC143C

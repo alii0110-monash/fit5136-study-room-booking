@@ -1,0 +1,6 @@
+{
+  "type": "module",
+  "devDependencies": {
+    "mermaid": "^11.13.0"
+  }
+}

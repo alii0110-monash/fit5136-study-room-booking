@@ -1,0 +1,17 @@
+flowchart TB
+    subgraph ADMIN["Screen 6: Admin Main Menu"]
+        AM1["Administrator Main Menu<br>1. Add Room<br>2. Delete Room<br>3. View All Rooms<br>4. View All Bookings<br>0. Logout"]
+    end
+
+    ADMIN -->|"1"| ADD["Screen 7: Add Room"]
+    ADMIN -->|"2"| DELETE["Screen 8: Delete Room"]
+    ADMIN -->|"3"| VIEW_ROOMS["View All Rooms"]
+    ADMIN -->|"4"| VIEW_BOOKINGS["View All Bookings"]
+    ADMIN -->|"0"| WELCOME["[RETURN] Screen 1: Welcome"]
+
+    style ADMIN fill:#FFB6C1,stroke:#DC143C,stroke-width:2px
+    style ADD fill:#FFB6C1,stroke:#DC143C
+    style DELETE fill:#FFB6C1,stroke:#DC143C
+    style VIEW_ROOMS fill:#FFB6C1,stroke:#DC143C
+    style VIEW_BOOKINGS fill:#FFB6C1,stroke:#DC143C
+    style WELCOME fill:#90EE90,stroke:#228B22

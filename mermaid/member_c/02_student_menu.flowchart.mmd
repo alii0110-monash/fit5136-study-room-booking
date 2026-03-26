@@ -1,0 +1,17 @@
+flowchart TB
+    subgraph STUDENT_MENU["Screen 2: Student Main Menu"]
+        SM1["Student Main Menu<br>1. Book Room<br>2. View Rooms<br>3. View Account<br>4. Checkout<br>0. Logout"]
+    end
+
+    STUDENT_MENU -->|"1"| BOOK["Screen 4: Book Room"]
+    STUDENT_MENU -->|"2"| VIEW_ROOMS["View All Rooms"]
+    STUDENT_MENU -->|"3"| ACCOUNT["Screen 3: Account Details"]
+    STUDENT_MENU -->|"4"| CHECKOUT["Screen 5: Checkout"]
+    STUDENT_MENU -->|"0"| WELCOME["[RETURN] Screen 1: Welcome"]
+
+    style STUDENT_MENU fill:#87CEEB,stroke:#4169E1,stroke-width:2px
+    style BOOK fill:#87CEEB,stroke:#4169E1
+    style ACCOUNT fill:#87CEEB,stroke:#4169E1
+    style CHECKOUT fill:#87CEEB,stroke:#4169E1
+    style VIEW_ROOMS fill:#87CEEB,stroke:#4169E1
+    style WELCOME fill:#90EE90,stroke:#228B22

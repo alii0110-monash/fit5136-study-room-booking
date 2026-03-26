@@ -1,0 +1,11 @@
+flowchart TB
+    ERROR_BALANCE(["Exception: Insufficient Balance"])
+    B1["Insufficient balance<br>Required: 60 credits | Available: 50 credits"]
+    STUDENT_MENU(["Screen 2: Student Menu"])
+
+    ERROR_BALANCE --> B1
+    B1 -->|"Enter"| STUDENT_MENU
+
+    style ERROR_BALANCE fill:#FFB6C1,stroke:#DC143C,stroke-width:3px
+    style B1 fill:#FFB6C1,stroke:#DC143C
+    style STUDENT_MENU fill:#87CEEB,stroke:#4169E1

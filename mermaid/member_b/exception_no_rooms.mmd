@@ -1,0 +1,13 @@
+flowchart TB
+    NO_ROOMS(["Exception: No Matching Rooms"])
+    NR1["No rooms available<br>1. Try Different Criteria<br>0. Return to Main Menu"]
+    BOOK(["Screen 4: Book Room"])
+    STUDENT_MENU(["Screen 2: Student Menu"])
+
+    NO_ROOMS --> NR1
+    NR1 -->|"1"| BOOK
+    NR1 -->|"0"| STUDENT_MENU
+
+    style NO_ROOMS fill:#FFE4B5,stroke:#DAA520,stroke-width:2px
+    style BOOK fill:#87CEEB,stroke:#4169E1
+    style STUDENT_MENU fill:#87CEEB,stroke:#4169E1

@@ -1,0 +1,11 @@
+flowchart TB
+    DELETE_REJECTED(["Exception: Delete Rejected"])
+    DR1["Cannot delete Room 101<br>- there are future bookings<br>The room has active reservations"]
+    ADMIN(["Screen 6: Admin Menu"])
+
+    DELETE_REJECTED --> DR1
+    DR1 -->|"Enter"| ADMIN
+
+    style DELETE_REJECTED fill:#FFB6C1,stroke:#DC143C,stroke-width:3px
+    style DR1 fill:#FFB6C1,stroke:#DC143C
+    style ADMIN fill:#FFB6C1,stroke:#DC143C

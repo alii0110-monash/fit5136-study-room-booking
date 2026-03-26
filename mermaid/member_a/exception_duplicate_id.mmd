@@ -1,0 +1,11 @@
+flowchart TB
+    ERROR_ID(["Exception: Student ID Already Registered"])
+    E1["Student ID already registered<br>Please try logging in or use a different ID"]
+    WELCOME(["Screen 1: Welcome"])
+
+    ERROR_ID --> E1
+    E1 -->|"Enter"| WELCOME
+
+    style ERROR_ID fill:#FFB6C1,stroke:#DC143C,stroke-width:3px
+    style E1 fill:#FFB6C1,stroke:#DC143C
+    style WELCOME fill:#90EE90,stroke:#228B22

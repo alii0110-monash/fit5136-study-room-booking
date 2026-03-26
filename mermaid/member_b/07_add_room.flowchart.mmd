@@ -1,0 +1,40 @@
+flowchart TB
+    ADD_ROOM(["Screen 7: Add Room"])
+    AR1["Add New Room<br>Enter Room ID"]
+    AR2["Enter Room Name"]
+    AR3["Enter Capacity"]
+    AR4["Enter Price per Hour ($)"]
+    AR5["Enter equipment (one at a time)<br>Or 'done' to finish"]
+    AR6["Equipment added: Whiteboard"]
+    AR7["Room 101 added successfully<br>1. Add another room<br>0. Return to Admin Menu"]
+    AR8["Room 101 already exists"]
+    AR9["Invalid capacity or price"]
+    ADMIN(["Screen 6: Admin Menu"])
+
+    ADD_ROOM --> AR1
+    AR1 -->|"Room ID"| AR2
+    AR2 -->|"Name"| AR3
+    AR3 -->|"Capacity"| AR4
+    AR4 -->|"Price"| AR5
+    AR5 -->|"done"| AR7
+    AR5 -->|"item"| AR6
+    AR6 -->|"done"| AR7
+    AR6 -->|"more"| AR6
+    AR1 -->|"Exists"| AR8
+    AR3 -->|"Invalid"| AR9
+    AR4 -->|"Invalid"| AR9
+    AR7 -->|"1"| ADD_ROOM
+    AR7 -->|"0"| ADMIN
+    AR8 -->|"Enter"| ADD_ROOM
+    AR9 -->|"Enter"| ADD_ROOM
+
+    style AR1 fill:#F0F0F0,stroke:#808080
+    style AR2 fill:#F0F0F0,stroke:#808080
+    style AR3 fill:#F0F0F0,stroke:#808080
+    style AR4 fill:#F0F0F0,stroke:#808080
+    style AR5 fill:#F0F0F0,stroke:#808080
+    style AR6 fill:#F0F0F0,stroke:#808080
+    style AR7 fill:#90EE90,stroke:#228B22
+    style AR8 fill:#FFB6C1,stroke:#DC143C
+    style AR9 fill:#FFB6C1,stroke:#DC143C
+    style ADMIN fill:#FFB6C1,stroke:#DC143C

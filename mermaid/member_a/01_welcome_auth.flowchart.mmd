@@ -1,0 +1,44 @@
+flowchart TB
+    subgraph WELCOME["[START HERE] Screen 1: Welcome"]
+        W1["FIT5136 Study Room Booking System<br>1. Register<br>2. Login<br>0. Exit"]
+    end
+
+    subgraph REGISTER["Registration Flow"]
+        R1["Enter Student ID (numbers only)"]
+        R2["Enter Email"]
+        R3["Enter Password (>6 characters)"]
+        R4["✓ 注册成功，已为您发放 50 积分初始体验金<br>Press Enter to continue..."]
+        R5["[ERROR] Student ID already registered<br>Press Enter to continue..."]
+        R6["[ERROR] Invalid email format<br>Press Enter to continue..."]
+        R7["[ERROR] Password must be more than 6 characters<br>Press Enter to continue..."]
+    end
+
+    subgraph LOGIN["Login Flow"]
+        L1["Enter Student ID"]
+        L2["Enter Password"]
+        L3["[ERROR] Invalid credentials<br>Press Enter to continue..."]
+    end
+
+    WELCOME -->|"1"| R1
+    WELCOME -->|"2"| L1
+
+    R1 --> R2
+    R2 --> R3
+    R3 --> R4
+    R3 -->|"Email invalid"| R6
+    R1 -->|"ID taken"| R5
+    R3 -->|"Password invalid"| R7
+
+    L1 --> L2
+    L2 -->|"Valid"| STUDENT_MENU["Screen 2: Student Menu"]
+    L2 -->|"Invalid"| L3
+    L2 -->|"Admin"| ADMIN_MENU["Screen 6: Admin Menu"]
+
+    style WELCOME fill:#90EE90,stroke:#228B22,stroke-width:3px
+    style R4 fill:#90EE90,stroke:#228B22
+    style R5 fill:#FFB6C1,stroke:#DC143C
+    style R6 fill:#FFB6C1,stroke:#DC143C
+    style R7 fill:#FFB6C1,stroke:#DC143C
+    style L3 fill:#FFB6C1,stroke:#DC143C
+    style STUDENT_MENU fill:#87CEEB,stroke:#4169E1
+    style ADMIN_MENU fill:#FFB6C1,stroke:#DC143C

@@ -1,0 +1,13 @@
+flowchart TB
+    DOUBLE_CHECK(["Exception: Double-Check Failed"])
+    DC1["Room 101 is no longer available<br>The room was just booked by another user<br><br>1. Select Another Room<br>0. Return to Main Menu"]
+    BOOK(["Screen 4: Book Room"])
+    STUDENT_MENU(["Screen 2: Student Menu"])
+
+    DOUBLE_CHECK --> DC1
+    DC1 -->|"1"| BOOK
+    DC1 -->|"0"| STUDENT_MENU
+
+    style DOUBLE_CHECK fill:#FFB6C1,stroke:#DC143C,stroke-width:3px
+    style BOOK fill:#87CEEB,stroke:#4169E1
+    style STUDENT_MENU fill:#87CEEB,stroke:#4169E1

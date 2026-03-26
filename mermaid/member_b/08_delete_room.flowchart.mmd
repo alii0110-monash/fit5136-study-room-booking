@@ -1,0 +1,22 @@
+flowchart TB
+    DELETE_ROOM(["Screen 8: Delete Room"])
+    DR1["Delete Room<br>Available Rooms<br>Room ID | Name | Capacity | Price<br>101 | Room 101 | 4 | $15.00<br><br>Enter Room ID to delete (0 to go back)"]
+    DR2["Delete Room 101? (Y/N)"]
+    DR3["Room 101 deleted successfully"]
+    DR4["Deletion cancelled"]
+    DR5["Cannot delete Room 101<br>- there are future bookings"]
+    ADMIN(["Screen 6: Admin Menu"])
+
+    DELETE_ROOM --> DR1
+    DR1 -->|"Room ID"| DR2
+    DR1 -->|"0"| ADMIN
+    DR2 -->|"Y"| DR3
+    DR2 -->|"N"| DR4
+    DR2 -->|"Future booking"| DR5
+
+    style DR1 fill:#F0F0F0,stroke:#808080
+    style DR2 fill:#FFE4B5,stroke:#DAA520
+    style DR3 fill:#90EE90,stroke:#228B22
+    style DR4 fill:#FFE4B5,stroke:#DAA520
+    style DR5 fill:#FFB6C1,stroke:#DC143C
+    style ADMIN fill:#FFB6C1,stroke:#DC143C
