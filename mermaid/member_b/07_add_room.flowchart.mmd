@@ -11,9 +11,9 @@ Administrator Mode
 Step 1 of 4: Room ID
 
 ------------------------------------------
-Enter Room ID: 101_
+Enter Room ID: _
 ------------------------------------------
-Example format: 101, A101, ROOM-01
+Example: 101, A101, ROOM-01
     "]
 
     AR2["
@@ -28,9 +28,9 @@ Room ID: 101
 Step 2 of 4: Room Name
 
 ------------------------------------------
-Enter Room Name: Woodside Study Room 101_
+Enter Room Name: _
 ------------------------------------------
-Example: Woodside Study Room 101
+
     "]
 
     AR3["
@@ -46,7 +46,7 @@ Room Name: Woodside Study Room 101
 Step 3 of 4: Capacity
 
 ------------------------------------------
-Enter Capacity (number of people): 4_
+Enter Capacity (number of people): _
 ------------------------------------------
 Must be a positive integer > 0
     "]
@@ -65,7 +65,7 @@ Capacity : 4 people
 Step 4 of 4: Price
 
 ------------------------------------------
-Enter Price per Hour ($): 15.00_
+Enter Price per Hour ($): _
 ------------------------------------------
 Must be a positive number
     "]
@@ -86,12 +86,12 @@ Step 5: Equipment (Optional)
 ------------------------------------------
 
 Enter equipment one at a time.
-Type 'done' to finish.
+Press Enter with no input to finish.
 
 Current equipment: None
 
 ------------------------------------------
-Enter equipment: Whiteboard_
+Enter equipment: _
     "]
 
     AR6["
@@ -109,9 +109,10 @@ Price     : $15.00/hour
 Equipment List:
   Whiteboard : added
 ------------------------------------------
-Enter next equipment (or 'done'): TV_
+Enter next equipment
+(Press Enter with no input to finish): _
 
-Current equipment: Whiteboard, TV
+Current equipment: Whiteboard
     "]
 
     AR7["
@@ -184,10 +185,10 @@ Please check your input and try again.
     AR2 -->|"Enter"| AR3
     AR3 -->|"Enter"| AR4
     AR4 -->|"Enter"| AR5
-    AR5 -->|"done"| AR7
+    AR5 -->|""| AR7
     AR5 -->|"item"| AR6
-    AR6 -->|"done"| AR7
-    AR6 -->|"more"| AR6
+    AR6 -->|""| AR7
+    AR6 -->|"item"| AR6
     AR1 -->|"Exists"| AR8
     AR3 -->|"Invalid"| AR9
     AR4 -->|"Invalid"| AR9
