@@ -1,6 +1,21 @@
 flowchart TB
     DOUBLE_CHECK(["Exception: Double-Check Failed"])
-    DC1["Room 101 is no longer available<br>The room was just booked by another user<br><br>1. Select Another Room<br>0. Return to Main Menu"]
+
+    DC1["
+==========================================
+MSSRB - Booking Failed
+==========================================
+
+[WARNING] Room No Longer Available
+
+Room 101 is no longer available.
+The room was just booked by another user.
+
+------------------------------------------
+1. Select Another Room
+0. Return to Main Menu
+    "]
+
     BOOK(["Screen 4: Book Room"])
     STUDENT_MENU(["Screen 2: Student Menu"])
 

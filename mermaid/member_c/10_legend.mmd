@@ -1,7 +1,11 @@
 flowchart TB
     subgraph LEGEND["Legend & Color Codes"]
         direction TB
-        L1["Color Meanings"]
+        L1["
+==========================================
+MSSRB - Legend & Color Guide
+==========================================
+        "]
         L2["Green: Success messages & Start screen"]
         L3["Red/Pink: Errors, Warnings, Admin menu"]
         L4["Blue: Student screens, Information"]
@@ -9,17 +13,33 @@ flowchart TB
         L6["Gray: Input fields, Data tables"]
     end
 
-    subgraph NAV["Navigation"]
+    subgraph NAV["Navigation & Input"]
         direction TB
-        N1["Arrow Labels"]
-        N2["Menu choices: 1, 2, 0, Y, N"]
+        N1["
+==========================================
+Navigation Guide
+==========================================
+        "]
+        N2["Arrow Labels show user choices:
+1, 2, 0 - Menu options
+Y, N - Confirmation
+Enter - Proceed with input"]
     end
 
     subgraph PRINCIPLES["Usability Principles (Ben Shneiderman)"]
         direction TB
-        P1["P1: Offer informative feedback<br>Green success, Red errors, Yellow confirmations"]
-        P2["P2: Reduce short-term memory load<br>Press Enter / 0 to navigate, clear labels"]
-        P3["P3: Permit reversible actions<br>Y/N confirmations prevent accidental actions"]
+        P1["
+==========================================
+Usability Principles
+==========================================
+        "]
+        P2["P1: Offer informative feedback
+Green success, Red errors,
+Yellow confirmations"]
+        P3["P2: Reduce short-term memory load
+Clear labels, simple navigation"]
+        P4["P3: Permit reversible actions
+Y/N confirmations prevent errors"]
     end
 
     style LEGEND fill:#F0F0F0,stroke:#808080,stroke-width:2px

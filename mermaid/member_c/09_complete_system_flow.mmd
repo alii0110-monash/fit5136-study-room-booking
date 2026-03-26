@@ -1,18 +1,57 @@
 flowchart TB
     subgraph START["[START HERE] Screen 1: Welcome"]
-        W1["FIT5136 Study Room Booking System<br>1. Register<br>2. Login<br>0. Exit"]
+        W1["
+==========================================
+MSSRB - Study Room Booking System
+==========================================
+
+1. Register
+2. Login
+0. Exit
+
+Enter choice: _        "]
     end
 
     subgraph REGISTER["Registration"]
-        R1["✓ 注册成功，已为您发放 50 积分初始体验金<br>Press Enter to continue..."]
+        R1["
+==========================================
+Registration Success
+==========================================
+
+[SUCCESS] Registration successful!
+Initial bonus: 50 credits added
+
+Press [Enter] to continue...
+        "]
     end
 
     subgraph LOGIN["Login"]
-        L1["[ERROR] Invalid credentials<br>Press Enter to continue..."]
+        L1["
+==========================================
+Login Error
+==========================================
+
+[ERROR] Invalid credentials
+
+Press [Enter] to continue...
+        "]
     end
 
     subgraph STUDENT["Student Flow"]
-        SM["Student Main Menu<br>1. Book Room<br>2. View Rooms<br>3. View Account<br>4. Checkout<br>0. Logout"]
+        SM["
+==========================================
+MSSRB - Student Main Menu
+==========================================
+
+Logged in as: Student (33445566)
+Balance: 50 credits
+
+1. Book Room
+2. View Rooms
+3. View Account
+4. Checkout
+0. Logout
+        "]
         BOOK["Screen 4: Book Room"]
         ACCOUNT["Screen 3: Account Details"]
         CHECKOUT["Screen 5: Checkout"]
@@ -20,7 +59,19 @@ flowchart TB
     end
 
     subgraph ADMIN["Admin Flow"]
-        AM["Admin Main Menu<br>1. Add Room<br>2. Delete Room<br>3. View Rooms<br>4. View Bookings<br>0. Logout"]
+        AM["
+==========================================
+MSSRB - Admin Main Menu
+==========================================
+
+Logged in as: Admin
+
+1. Add Room
+2. Delete Room
+3. View Rooms
+4. View Bookings
+0. Logout
+        "]
         ADD["Screen 7: Add Room"]
         DELETE["Screen 8: Delete Room"]
     end

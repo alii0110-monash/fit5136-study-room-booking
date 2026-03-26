@@ -1,6 +1,20 @@
 flowchart TB
     ERROR_ID(["Exception: Student ID Already Registered"])
-    E1["Student ID already registered<br>Please try logging in or use a different ID"]
+
+    E1["
+==========================================
+MSSRB - Registration Error
+==========================================
+
+[ERROR] Student ID already registered
+
+The student ID you entered is already
+in use. Please try logging in or use
+a different ID.
+
+Press [Enter] to try again...
+    "]
+
     WELCOME(["Screen 1: Welcome"])
 
     ERROR_ID --> E1

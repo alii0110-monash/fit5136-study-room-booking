@@ -1,13 +1,112 @@
 flowchart TB
     BOOK(["Screen 4: Book a Room"])
-    B1["Book a Room<br>Enter Date (YYYY-MM-DD)"]
-    B2["Enter Start Time (HH:MM)<br>Enter End Time (HH:MM)"]
-    B3["Enter Minimum Capacity"]
-    B4["Available Rooms<br>Room ID | Name | Capacity | Price<br>101 | Room 101 | 4 | $15.00<br>Enter Room ID to book (0 to go back)"]
-    B5["Confirm Booking<br>Room: 101 | Date: 2026-03-28 | Time: 10:00-12:00<br>Base Price: $30.00<br>Confirm booking? (Y/N)"]
-    B6["Booking created successfully<br>Booking ID: ABC123"]
-    B7["Room 101 is no longer available"]
-    B8["No rooms available<br>1. Try Different Criteria<br>0. Return to Main Menu"]
+
+    B1["
+==========================================
+MSSRB - Book a Room
+==========================================
+
+Enter Date (YYYY-MM-DD): _
+    "]
+
+    B2["
+==========================================
+MSSRB - Book a Room
+==========================================
+
+Date: 2026-03-28
+
+Enter Start Time (HH:MM): _
+Enter End Time (HH:MM): _
+    "]
+
+    B3["
+==========================================
+MSSRB - Book a Room
+==========================================
+
+Date: 2026-03-28
+Time: 10:00 - 12:00
+
+Enter Minimum Capacity: _
+    "]
+
+    B4["
+==========================================
+MSSRB - Available Rooms
+==========================================
+
+Date: 2026-03-28
+Time: 10:00 - 12:00 | Min Capacity: 4
+
+------------------------------------------
+Room ID | Name           | Cap | Price
+101     | Room 101       | 4   | $15.00
+102     | Room 102       | 6   | $20.00
+------------------------------------------
+
+Enter Room ID to book: _
+(Press [0] to go back)
+    "]
+
+    B5["
+==========================================
+MSSRB - Confirm Booking
+==========================================
+
+Room: 101
+Date: 2026-03-28
+Time: 10:00 - 12:00 (2 hours)
+
+Base Price: $30.00
+
+------------------------------------------
+Confirm booking? (Y/N): _
+    "]
+
+    B6["
+==========================================
+MSSRB - Booking Created
+==========================================
+
+[SUCCESS] Booking Created!
+
+Booking ID: ABC123
+Room: 101
+Date: 2026-03-28
+Time: 10:00 - 12:00
+Status: Pending Payment
+
+Press [Enter] to continue...
+    "]
+
+    B7["
+==========================================
+MSSRB - Booking Error
+==========================================
+
+[WARNING] Room No Longer Available
+
+Room 101 is no longer available.
+The room was just booked by another user.
+
+1. Select Another Room
+0. Return to Main Menu
+    "]
+
+    B8["
+==========================================
+MSSRB - No Rooms Available
+==========================================
+
+[WARNING] No Matching Rooms
+
+No rooms available matching your criteria.
+
+1. Try Different Criteria
+0. Return to Main Menu
+    "]
+
     STUDENT_MENU(["Screen 2: Student Menu"])
 
     BOOK --> B1

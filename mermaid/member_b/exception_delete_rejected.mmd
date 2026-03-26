@@ -1,6 +1,22 @@
 flowchart TB
     DELETE_REJECTED(["Exception: Delete Rejected"])
-    DR1["Cannot delete Room 101<br>- there are future bookings<br>The room has active reservations"]
+
+    DR1["
+==========================================
+MSSRB - Delete Room Error
+==========================================
+
+[ERROR] Cannot Delete Room
+
+Room 101 has active reservations.
+There are future bookings for this room.
+
+The room cannot be deleted until all
+bookings have been completed or cancelled.
+
+Press [Enter] to return to Admin Menu
+    "]
+
     ADMIN(["Screen 6: Admin Menu"])
 
     DELETE_REJECTED --> DR1

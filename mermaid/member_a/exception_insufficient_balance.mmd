@@ -1,6 +1,21 @@
 flowchart TB
     ERROR_BALANCE(["Exception: Insufficient Balance"])
-    B1["Insufficient balance<br>Required: 60 credits | Available: 50 credits"]
+
+    B1["
+==========================================
+MSSRB - Checkout Error
+==========================================
+
+[ERROR] Insufficient balance
+
+Required: 60 credits
+Available: 50 credits
+
+Booking has been cancelled.
+
+1. Return to Main Menu
+    "]
+
     STUDENT_MENU(["Screen 2: Student Menu"])
 
     ERROR_BALANCE --> B1

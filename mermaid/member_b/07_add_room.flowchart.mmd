@@ -1,14 +1,118 @@
 flowchart TB
     ADD_ROOM(["Screen 7: Add Room"])
-    AR1["Add New Room<br>Enter Room ID"]
-    AR2["Enter Room Name"]
-    AR3["Enter Capacity"]
-    AR4["Enter Price per Hour ($)"]
-    AR5["Enter equipment (one at a time)<br>Or 'done' to finish"]
-    AR6["Equipment added: Whiteboard"]
-    AR7["Room 101 added successfully<br>1. Add another room<br>0. Return to Admin Menu"]
-    AR8["Room 101 already exists"]
-    AR9["Invalid capacity or price"]
+
+    AR1["
+==========================================
+MSSRB - Add New Room
+==========================================
+
+Enter Room ID: _
+    "]
+
+    AR2["
+==========================================
+MSSRB - Add New Room
+==========================================
+
+Room ID: 101
+
+Enter Room Name: _
+    "]
+
+    AR3["
+==========================================
+MSSRB - Add New Room
+==========================================
+
+Room ID: 101
+Room Name: Woodside Study Room 101
+
+Enter Capacity: _
+    "]
+
+    AR4["
+==========================================
+MSSRB - Add New Room
+==========================================
+
+Room ID: 101
+Room Name: Woodside Study Room 101
+Capacity: 4
+
+Enter Price per Hour ($): _
+    "]
+
+    AR5["
+==========================================
+MSSRB - Add New Room
+==========================================
+
+Room ID: 101
+Room Name: Woodside Study Room 101
+Capacity: 4 | Price: $15.00/hour
+
+------------------------------------------
+Enter equipment (one at a time)
+Type 'done' to finish
+------------------------------------------
+Equipment: _
+    "]
+
+    AR6["
+==========================================
+MSSRB - Add New Room
+==========================================
+
+Room ID: 101
+Room Name: Woodside Study Room 101
+Capacity: 4 | Price: $15.00/hour
+
+Equipment added: Whiteboard
+
+Enter next equipment (or 'done'): _
+    "]
+
+    AR7["
+==========================================
+MSSRB - Room Added
+==========================================
+
+[SUCCESS] Room Added Successfully!
+
+Room ID: 101
+Room Name: Woodside Study Room 101
+Capacity: 4 | Price: $15.00/hour
+Equipment: Whiteboard, TV
+
+1. Add another room
+0. Return to Admin Menu
+    "]
+
+    AR8["
+==========================================
+MSSRB - Add Room Error
+==========================================
+
+[ERROR] Room Already Exists
+
+Room 101 already exists in the system.
+
+Press [Enter] to try again...
+    "]
+
+    AR9["
+==========================================
+MSSRB - Add Room Error
+==========================================
+
+[ERROR] Invalid Input
+
+Capacity must be a number > 0
+Price must be a number >= 0
+
+Press [Enter] to try again...
+    "]
+
     ADMIN(["Screen 6: Admin Menu"])
 
     ADD_ROOM --> AR1

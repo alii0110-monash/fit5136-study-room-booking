@@ -1,10 +1,78 @@
 flowchart TB
     DELETE_ROOM(["Screen 8: Delete Room"])
-    DR1["Delete Room<br>Available Rooms<br>Room ID | Name | Capacity | Price<br>101 | Room 101 | 4 | $15.00<br><br>Enter Room ID to delete (0 to go back)"]
-    DR2["Delete Room 101? (Y/N)"]
-    DR3["Room 101 deleted successfully"]
-    DR4["Deletion cancelled"]
-    DR5["Cannot delete Room 101<br>- there are future bookings"]
+
+    DR1["
+==========================================
+MSSRB - Delete Room
+==========================================
+
+Available Rooms:
+
+------------------------------------------
+Room ID | Name           | Cap | Price
+101     | Room 101       | 4   | $15.00
+102     | Room 102       | 6   | $20.00
+------------------------------------------
+
+Enter Room ID to delete: _
+(Press [0] to go back)
+    "]
+
+    DR2["
+==========================================
+MSSRB - Confirm Delete
+==========================================
+
+[WARNING] Confirm Deletion
+
+Delete Room 101?
+
+Room: Woodside Study Room 101
+Capacity: 4 | Price: $15.00/hour
+
+This action cannot be undone.
+
+Confirm? (Y/N): _
+    "]
+
+    DR3["
+==========================================
+MSSRB - Room Deleted
+==========================================
+
+[SUCCESS] Room Deleted
+
+Room 101 has been removed from the system.
+
+Press [Enter] to continue...
+    "]
+
+    DR4["
+==========================================
+MSSRB - Delete Cancelled
+==========================================
+
+[INFO] Delete Cancelled
+
+Room deletion was cancelled.
+
+Press [Enter] to continue...
+    "]
+
+    DR5["
+==========================================
+MSSRB - Delete Rejected
+==========================================
+
+[ERROR] Cannot Delete Room
+
+Room 101 has future bookings.
+Please cancel or wait for bookings
+to complete before deletion.
+
+Press [Enter] to continue...
+    "]
+
     ADMIN(["Screen 6: Admin Menu"])
 
     DELETE_ROOM --> DR1
