@@ -2,12 +2,18 @@ flowchart TB
     subgraph WELCOME["[START HERE] Screen 1: Welcome & Authentication"]
         W1["
 ==========================================
-MSSRB - Study Room Booking System
+MSSRB - FIT5136 Study Room Booking System
 ==========================================
 
+Welcome to the Study Room Booking System!
+
+------------------------------------------
 1. Register
 2. Login
 0. Exit
+------------------------------------------
+
+
 
 Enter choice: _        "]
     end
@@ -18,21 +24,34 @@ Enter choice: _        "]
 MSSRB - Registration
 ==========================================
 
-Enter Student ID (numbers only): _
+Enter Student ID (numbers only): 33445566
+------------------------------------------
+Student ID must be 8 digits
+Example: 33445566
         "]
         R2["
 ==========================================
 MSSRB - Registration
 ==========================================
 
-Enter Email: _
+Student ID: 33445566
+
+Enter Email: student33445566@student.monash.edu
+------------------------------------------
+Must be a valid email format
+Example: student@student.monash.edu
         "]
         R3["
 ==========================================
 MSSRB - Registration
 ==========================================
 
-Enter Password (>6 characters): _
+Student ID: 33445566
+Email: student33445566@student.monash.edu
+
+Enter Password (>6 characters): *******_
+------------------------------------------
+Password must be more than 6 characters
         "]
         R4["
 ==========================================
@@ -40,11 +59,13 @@ MSSRB - Registration Success
 ==========================================
 
 [SUCCESS] Registration successful!
-Initial bonus: 50 credits added
 
 Student ID: 33445566
-Email: student@monash.edu
+Email: student33445566@student.monash.edu
 
+Initial bonus: 50 credits added to your account!
+
+------------------------------------------
 Press [Enter] to continue...
         "]
         R5["
@@ -52,10 +73,15 @@ Press [Enter] to continue...
 MSSRB - Registration Error
 ==========================================
 
-[ERROR] Student ID already registered
+[ERROR] Student ID already exists
 
-Please try logging in or use a different ID
+The Student ID 33445566 is already
+registered in the system.
 
+Please try logging in or use a
+different Student ID.
+
+------------------------------------------
 Press [Enter] to continue...
         "]
         R6["
@@ -65,8 +91,12 @@ MSSRB - Registration Error
 
 [ERROR] Invalid email format
 
-Please enter a valid email address
+The email address you entered is not
+in a valid format.
 
+Please enter a valid email address.
+
+------------------------------------------
 Press [Enter] to continue...
         "]
         R7["
@@ -76,8 +106,10 @@ MSSRB - Registration Error
 
 [ERROR] Password too short
 
-Password must be more than 6 characters
+Password must be more than 6 characters.
+Please try again.
 
+------------------------------------------
 Press [Enter] to continue...
         "]
     end
@@ -88,14 +120,20 @@ Press [Enter] to continue...
 MSSRB - Login
 ==========================================
 
-Enter Student ID: _
+Enter Student ID: 33445566_
+------------------------------------------
+
         "]
         L2["
 ==========================================
 MSSRB - Login
 ==========================================
 
-Enter Password: _
+Student ID: 33445566
+
+Enter Password: *******_
+------------------------------------------
+
         "]
         L3["
 ==========================================
@@ -104,8 +142,10 @@ MSSRB - Login Error
 
 [ERROR] Invalid credentials
 
-Student ID or password is incorrect
+Student ID or password is incorrect.
+Please check your credentials and try again.
 
+------------------------------------------
 Press [Enter] to continue...
         "]
     end

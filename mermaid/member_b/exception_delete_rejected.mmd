@@ -8,13 +8,32 @@ MSSRB - Delete Room Error
 
 [ERROR] Cannot Delete Room
 
-Room 101 has active reservations.
-There are future bookings for this room.
+------------------------------------------
+Room 101 (Woodside 101) cannot be deleted
+because it has future bookings.
+------------------------------------------
+
+Future Bookings for this Room:
+------------------------------------------
+Booking ID | Student ID | Date       | Time      | Status
+BR-00003   | 33445566   | 2026-03-28 | 14:00-18:00 | CONFIRMED
+BR-00004   | 33445567   | 2026-03-29 | 10:00-12:00 | CONFIRMED
+BR-00005   | 33445568   | 2026-03-30 | 09:00-11:00 | PENDING
+------------------------------------------
 
 The room cannot be deleted until all
-bookings have been completed or cancelled.
+future bookings have been completed
+or cancelled.
+------------------------------------------
 
-Press [Enter] to return to Admin Menu
+[P1: Offer informative feedback]
+
+Options:
+1. View Room Details
+0. Return to Admin Menu
+
+------------------------------------------
+Press [Enter] to continue...
     "]
 
     ADMIN(["Screen 6: Admin Menu"])

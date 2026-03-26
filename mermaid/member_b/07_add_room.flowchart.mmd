@@ -5,87 +5,142 @@ flowchart TB
 ==========================================
 MSSRB - Add New Room
 ==========================================
+Administrator Mode
+==========================================
 
-Enter Room ID: _
+Step 1 of 4: Room ID
+
+------------------------------------------
+Enter Room ID: 101_
+------------------------------------------
+Example format: 101, A101, ROOM-01
     "]
 
     AR2["
 ==========================================
 MSSRB - Add New Room
 ==========================================
+Administrator Mode
+==========================================
 
 Room ID: 101
 
-Enter Room Name: _
+Step 2 of 4: Room Name
+
+------------------------------------------
+Enter Room Name: Woodside Study Room 101_
+------------------------------------------
+Example: Woodside Study Room 101
     "]
 
     AR3["
 ==========================================
 MSSRB - Add New Room
 ==========================================
+Administrator Mode
+==========================================
 
-Room ID: 101
+Room ID  : 101
 Room Name: Woodside Study Room 101
 
-Enter Capacity: _
+Step 3 of 4: Capacity
+
+------------------------------------------
+Enter Capacity (number of people): 4_
+------------------------------------------
+Must be a positive integer > 0
     "]
 
     AR4["
 ==========================================
 MSSRB - Add New Room
 ==========================================
+Administrator Mode
+==========================================
 
-Room ID: 101
+Room ID  : 101
 Room Name: Woodside Study Room 101
-Capacity: 4
+Capacity : 4 people
 
-Enter Price per Hour ($): _
+Step 4 of 4: Price
+
+------------------------------------------
+Enter Price per Hour ($): 15.00_
+------------------------------------------
+Must be a positive number
+Example: 15.00
     "]
 
     AR5["
 ==========================================
 MSSRB - Add New Room
 ==========================================
+Administrator Mode
+==========================================
 
-Room ID: 101
-Room Name: Woodside Study Room 101
-Capacity: 4 | Price: $15.00/hour
+Room ID   : 101
+Room Name : Woodside Study Room 101
+Capacity  : 4 people
+Price     : $15.00/hour
+------------------------------------------
+Step 5: Equipment (Optional)
+------------------------------------------
+[P2: Reduce memory load]
+
+Enter equipment one at a time.
+Type 'done' to finish.
+
+Current equipment: None
 
 ------------------------------------------
-Enter equipment (one at a time)
-Type 'done' to finish
-------------------------------------------
-Equipment: _
+Enter equipment: Whiteboard_
     "]
 
     AR6["
 ==========================================
 MSSRB - Add New Room
 ==========================================
+Administrator Mode
+==========================================
 
-Room ID: 101
-Room Name: Woodside Study Room 101
-Capacity: 4 | Price: $15.00/hour
+Room ID   : 101
+Room Name : Woodside Study Room 101
+Capacity  : 4 people
+Price     : $15.00/hour
+------------------------------------------
+Equipment List:
+1. Whiteboard
+------------------------------------------
+Enter next equipment (or 'done'): TV_
 
-Equipment added: Whiteboard
-
-Enter next equipment (or 'done'): _
+Current equipment: Whiteboard, TV
     "]
 
     AR7["
 ==========================================
-MSSRB - Room Added
+MSSRB - Room Added Successfully
 ==========================================
 
 [SUCCESS] Room Added Successfully!
 
-Room ID: 101
-Room Name: Woodside Study Room 101
-Capacity: 4 | Price: $15.00/hour
-Equipment: Whiteboard, TV
+------------------------------------------
+Room Details:
+------------------------------------------
+Room ID   : 101
+Room Name : Woodside Study Room 101
+Capacity  : 4 people
+Price     : $15.00/hour
+Equipment : Whiteboard, TV
+------------------------------------------
 
+[P1: Offer informative feedback]
+
+Options:
 1. Add another room
 0. Return to Admin Menu
+
+------------------------------------------
+Enter choice: _
     "]
 
     AR8["
@@ -95,9 +150,19 @@ MSSRB - Add Room Error
 
 [ERROR] Room Already Exists
 
-Room 101 already exists in the system.
+------------------------------------------
+Room ID 101 already exists in the system.
 
-Press [Enter] to try again...
+You cannot add a room with a duplicate ID.
+
+------------------------------------------
+
+Options:
+1. Enter a different Room ID
+0. Return to Admin Menu
+
+------------------------------------------
+Press [Enter] to continue...
     "]
 
     AR9["
@@ -107,19 +172,26 @@ MSSRB - Add Room Error
 
 [ERROR] Invalid Input
 
-Capacity must be a number > 0
-Price must be a number >= 0
+------------------------------------------
+One or more fields contain invalid data:
 
-Press [Enter] to try again...
+- Capacity must be a positive integer > 0
+- Price must be a positive number >= 0
+
+Please check your input and try again.
+
+------------------------------------------
+
+Press [Enter] to continue...
     "]
 
     ADMIN(["Screen 6: Admin Menu"])
 
     ADD_ROOM --> AR1
-    AR1 -->|"Room ID"| AR2
-    AR2 -->|"Name"| AR3
-    AR3 -->|"Capacity"| AR4
-    AR4 -->|"Price"| AR5
+    AR1 -->|"Enter"| AR2
+    AR2 -->|"Enter"| AR3
+    AR3 -->|"Enter"| AR4
+    AR4 -->|"Enter"| AR5
     AR5 -->|"done"| AR7
     AR5 -->|"item"| AR6
     AR6 -->|"done"| AR7

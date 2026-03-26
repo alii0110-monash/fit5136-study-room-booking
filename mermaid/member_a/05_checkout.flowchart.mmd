@@ -5,15 +5,18 @@ flowchart TB
 ==========================================
 MSSRB - Checkout
 ==========================================
-
-Pending Bookings:
-
-Booking ID | Room | Date       | Price
-ABC123     | 101  | 2026-03-28 | $30
+Logged in as: 33445566 (Student)
+Balance: 50 credits
+==========================================
 
 ------------------------------------------
+Pending Bookings
+------------------------------------------
+Booking ID | Room           | Date       | Time      | Price
+BR-00003   | Woodside 101  | 2026-03-28 | 14:00-18:00 | $60
+------------------------------------------
 
-Enter Booking ID to checkout: _
+Enter Booking ID to checkout: BR-00003_
 (Press [0] to return to Main Menu)
     "]
 
@@ -21,29 +24,54 @@ Enter Booking ID to checkout: _
 ==========================================
 MSSRB - Checkout Confirmation
 ==========================================
+Booking ID: BR-00003
+==========================================
 
-Booking: ABC123
-Room: 101
-Time: 10:00 - 12:00
-
-Total: $30.00
-Balance: 50 credits
+Room        : Woodside 101
+Date        : 2026-03-28
+Time        : 14:00 - 18:00 (4 hours)
+Capacity    : 4 people
 
 ------------------------------------------
-Confirm checkout? (Y/N): _
+Pricing Breakdown
+------------------------------------------
+Base Price  : $15/hour x 4 hours = $60.00
+
+[DEAL PACKAGE APPLIED]
+4-Hour Special Discount: -20%
+------------------------------------------
+Discounted Total  : $48.00
+------------------------------------------
+
+Your Current Balance: 50 credits
+After Payment        : 2 credits
+
+------------------------------------------
+[P3: Permit reversible actions]
+Confirm checkout? (Y/N): Y_
     "]
 
     C3["
 ==========================================
-MSSRB - Checkout Successful
+MSSRB - Payment Successful
 ==========================================
 
 [SUCCESS] Booking Confirmed!
 
-Booking ID: ABC123
-Amount Paid: $30.00
-Remaining Balance: 26 credits
+------------------------------------------
+Booking ID   : BR-00003
+Room         : Woodside 101
+Date & Time  : 2026-03-28, 14:00-18:00
+------------------------------------------
+Amount Paid  : $48.00
+(4-Hour Deal Package Applied)
+New Balance  : 2 credits
+------------------------------------------
 
+Thank you for using MSSRB!
+
+------------------------------------------
+[P1: Informative feedback]
 Press [0] to return to Main Menu
     "]
 
@@ -52,21 +80,28 @@ Press [0] to return to Main Menu
 MSSRB - Checkout Error
 ==========================================
 
-[ERROR] Insufficient balance
+[ERROR] Insufficient balance.
 
-Required: 60 credits
-Available: 50 credits
+------------------------------------------
+Booking Total  : $48.00
+Your Balance   : 50 credits
 
-Booking cancelled.
+Unfortunately, your balance is not
+enough to complete this booking.
 
-1. Add Funds
+------------------------------------------
+Options:
+1. Book a room with lower price
 0. Return to Main Menu
+
+------------------------------------------
+Press [0] to return to Main Menu
     "]
 
     STUDENT_MENU(["Screen 2: Student Menu"])
 
     CHECKOUT --> C1
-    C1 -->|"Booking ID"| C2
+    C1 -->|"BR-00003"| C2
     C1 -->|"0"| STUDENT_MENU
     C2 -->|"Y"| C3
     C2 -->|"N"| CHECKOUT

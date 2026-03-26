@@ -5,34 +5,46 @@ flowchart TB
 ==========================================
 MSSRB - Delete Room
 ==========================================
+Administrator Mode
+==========================================
 
+------------------------------------------
 Available Rooms:
-
 ------------------------------------------
-Room ID | Name           | Cap | Price
-101     | Room 101       | 4   | $15.00
-102     | Room 102       | 6   | $20.00
+Room ID | Name                | Cap | Price   | Equipment
+101     | Woodside 101        | 4   | $15/hr  | Whiteboard, TV
+102     | Woodside 102        | 6   | $20/hr  | Whiteboard, TV, Projector
+103     | Conference Room A    | 8   | $25/hr  | Whiteboard, TV, Projector, Video Conf
 ------------------------------------------
 
-Enter Room ID to delete: _
-(Press [0] to go back)
+Enter Room ID to delete: 101_
+(Press [0] to go back to Admin Menu)
     "]
 
     DR2["
 ==========================================
 MSSRB - Confirm Delete
 ==========================================
+[P3: Permit reversible actions]
+[WARNING] Confirmation Required
 
-[WARNING] Confirm Deletion
+------------------------------------------
+You are about to delete:
 
-Delete Room 101?
+Room ID   : 101
+Room Name : Woodside 101
+Capacity  : 4 people
+Price     : $15.00/hour
+Equipment : Whiteboard, TV
+------------------------------------------
 
-Room: Woodside Study Room 101
-Capacity: 4 | Price: $15.00/hour
+This action CANNOT be undone!
+All room data will be permanently removed.
 
-This action cannot be undone.
+------------------------------------------
+Are you sure you want to delete this room?
 
-Confirm? (Y/N): _
+Confirm? (Y/N): Y_
     "]
 
     DR3["
@@ -42,7 +54,12 @@ MSSRB - Room Deleted
 
 [SUCCESS] Room Deleted
 
-Room 101 has been removed from the system.
+------------------------------------------
+Room 101 (Woodside 101) has been
+permanently removed from the system.
+------------------------------------------
+
+[P1: Informative feedback]
 
 Press [Enter] to continue...
     "]
@@ -54,7 +71,10 @@ MSSRB - Delete Cancelled
 
 [INFO] Delete Cancelled
 
+------------------------------------------
 Room deletion was cancelled.
+No changes have been made.
+------------------------------------------
 
 Press [Enter] to continue...
     "]
@@ -66,11 +86,22 @@ MSSRB - Delete Rejected
 
 [ERROR] Cannot Delete Room
 
-Room 101 has future bookings.
-Please cancel or wait for bookings
-to complete before deletion.
+------------------------------------------
+Room 101 has future bookings:
 
-Press [Enter] to continue...
+Booking ID | Student ID | Date       | Time
+BR-00003   | 33445566   | 2026-03-28 | 14:00-18:00
+BR-00004   | 33445567   | 2026-03-29 | 10:00-12:00
+------------------------------------------
+
+This room cannot be deleted until all
+future bookings have been completed
+or cancelled.
+------------------------------------------
+
+[P1: Offer informative feedback]
+
+Press [Enter] to return to Admin Menu
     "]
 
     ADMIN(["Screen 6: Admin Menu"])

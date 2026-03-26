@@ -5,63 +5,109 @@ flowchart TB
 ==========================================
 MSSRB - Book a Room
 ==========================================
+Logged in as: 33445566 (Student)
+Balance: 50 credits
+==========================================
 
-Enter Date (YYYY-MM-DD): _
+Step 1 of 4: Select Date
+
+------------------------------------------
+Enter Date (YYYY-MM-DD): 2026-03-28_
+------------------------------------------
+[P1: Feedback]
+Date must be today or in the future
+Example: 2026-03-28
     "]
 
     B2["
 ==========================================
 MSSRB - Book a Room
 ==========================================
+Logged in as: 33445566 (Student)
+Balance: 50 credits
+==========================================
+
+Step 2 of 4: Select Time
 
 Date: 2026-03-28
 
-Enter Start Time (HH:MM): _
-Enter End Time (HH:MM): _
+------------------------------------------
+Enter Start Time (HH:MM): 14:00_
+Enter End Time (HH:MM): 18:00_
+------------------------------------------
+[P1: Feedback]
+End time must be after start time
+Example: 14:00 - 18:00
     "]
 
     B3["
 ==========================================
 MSSRB - Book a Room
 ==========================================
+Logged in as: 33445566 (Student)
+Balance: 50 credits
+==========================================
 
-Date: 2026-03-28
-Time: 10:00 - 12:00
+Step 3 of 4: Select Capacity
 
-Enter Minimum Capacity: _
+Date       : 2026-03-28
+Time       : 14:00 - 18:00 (4 hours)
+
+------------------------------------------
+Enter Minimum Capacity: 4_
+------------------------------------------
+[P1: Feedback]
+How many people will use the room?
     "]
 
     B4["
 ==========================================
 MSSRB - Available Rooms
 ==========================================
-
-Date: 2026-03-28
-Time: 10:00 - 12:00 | Min Capacity: 4
+Search Criteria:
+Date: 2026-03-28 | Time: 14:00-18:00
+Min Capacity: 4 people
+==========================================
 
 ------------------------------------------
-Room ID | Name           | Cap | Price
-101     | Room 101       | 4   | $15.00
-102     | Room 102       | 6   | $20.00
+Available Rooms:
+------------------------------------------
+Room ID | Name             | Cap | Price  | Equipment
+101     | Woodside 101     | 4   | $15/hr | Whiteboard, TV
+102     | Woodside 102     | 6   | $20/hr | Whiteboard, TV, Projector
+103     | Conference Room A | 8   | $25/hr | Whiteboard, TV, Projector, Video Conf
 ------------------------------------------
 
-Enter Room ID to book: _
-(Press [0] to go back)
+Enter Room ID to book: 101_
+(Press [0] to go back to Main Menu)
     "]
 
     B5["
 ==========================================
 MSSRB - Confirm Booking
 ==========================================
+[P3: Permit reversible actions]
 
-Room: 101
-Date: 2026-03-28
-Time: 10:00 - 12:00 (2 hours)
-
-Base Price: $30.00
+Room        : Woodside 101 (Room ID: 101)
+Date        : 2026-03-28
+Time        : 14:00 - 18:00 (4 hours)
+Capacity    : 4 people
 
 ------------------------------------------
-Confirm booking? (Y/N): _
+Pricing:
+------------------------------------------
+Base Price  : $15/hour x 4 hours = $60.00
+
+[DEAL PACKAGE AVAILABLE]
+4+ hours booking = 20% discount
+Discount     : -$12.00
+------------------------------------------
+Total Price : $48.00
+------------------------------------------
+
+Confirm booking? (Y/N): Y_
+
+[Double-check will be performed]
     "]
 
     B6["
@@ -69,14 +115,22 @@ Confirm booking? (Y/N): _
 MSSRB - Booking Created
 ==========================================
 
-[SUCCESS] Booking Created!
+[SUCCESS] Booking Created Successfully!
 
-Booking ID: ABC123
-Room: 101
-Date: 2026-03-28
-Time: 10:00 - 12:00
-Status: Pending Payment
+------------------------------------------
+Booking ID  : BR-00003
+Room        : Woodside 101
+Date        : 2026-03-28
+Time        : 14:00 - 18:00
+Total Price : $48.00 (Deal Package Applied)
+Status      : PENDING PAYMENT
+------------------------------------------
 
+Please proceed to Checkout to complete
+your booking and pay for the room.
+
+------------------------------------------
+[P1: Informative feedback]
 Press [Enter] to continue...
     "]
 
@@ -87,11 +141,23 @@ MSSRB - Booking Error
 
 [WARNING] Room No Longer Available
 
-Room 101 is no longer available.
-The room was just booked by another user.
+------------------------------------------
+Sorry! The room you selected was just
+booked by another user.
 
+Room: Woodside 101
+Date: 2026-03-28
+Time: 14:00 - 18:00
+------------------------------------------
+
+[P3: Permit reversible actions]
+
+Options:
 1. Select Another Room
 0. Return to Main Menu
+
+------------------------------------------
+Press [1] or [0] to continue...
     "]
 
     B8["
@@ -99,12 +165,24 @@ The room was just booked by another user.
 MSSRB - No Rooms Available
 ==========================================
 
-[WARNING] No Matching Rooms
+[INFO] No Matching Rooms Found
 
-No rooms available matching your criteria.
+------------------------------------------
+Your Search Criteria:
+Date       : 2026-03-28
+Time       : 14:00 - 18:00
+Min Capacity: 6 people
+------------------------------------------
 
+No rooms match all your criteria.
+Please try different search parameters.
+
+Options:
 1. Try Different Criteria
 0. Return to Main Menu
+
+------------------------------------------
+Press [1] or [0] to continue...
     "]
 
     STUDENT_MENU(["Screen 2: Student Menu"])
@@ -113,7 +191,7 @@ No rooms available matching your criteria.
     B1 --> B2
     B2 --> B3
     B3 --> B4
-    B4 -->|"Room selected"| B5
+    B4 -->|"Room 101"| B5
     B4 -->|"0"| STUDENT_MENU
     B4 -->|"No rooms"| B8
     B5 -->|"Y"| B6

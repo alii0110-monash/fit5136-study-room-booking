@@ -2,12 +2,19 @@ flowchart TB
     subgraph START["[START HERE] Screen 1: Welcome"]
         W1["
 ==========================================
-MSSRB - Study Room Booking System
+MSSRB - FIT5136 Study Room Booking System
 ==========================================
 
-1. Register
-2. Login
-0. Exit
+Welcome to the Study Room Booking System!
+Monash University - S1 2026
+
+------------------------------------------
+1. Register - Create a new student account
+2. Login - Access existing account
+0. Exit - Close the application
+------------------------------------------
+
+
 
 Enter choice: _        "]
     end
@@ -15,12 +22,15 @@ Enter choice: _        "]
     subgraph REGISTER["Registration"]
         R1["
 ==========================================
-Registration Success
+[SUCCESS] Registration Complete
 ==========================================
 
-[SUCCESS] Registration successful!
-Initial bonus: 50 credits added
+Student ID: 33445566
+Email: student33445566@student.monash.edu
 
+Initial bonus: 50 credits added!
+
+------------------------------------------
 Press [Enter] to continue...
         "]
     end
@@ -28,12 +38,13 @@ Press [Enter] to continue...
     subgraph LOGIN["Login"]
         L1["
 ==========================================
-Login Error
+[ERROR] Login Failed
 ==========================================
 
-[ERROR] Invalid credentials
+Invalid Student ID or Password.
 
-Press [Enter] to continue...
+------------------------------------------
+Press [Enter] to try again...
         "]
     end
 
@@ -42,15 +53,17 @@ Press [Enter] to continue...
 ==========================================
 MSSRB - Student Main Menu
 ==========================================
-
-Logged in as: Student (33445566)
+Logged in as: 33445566 (Student)
 Balance: 50 credits
+==========================================
 
 1. Book Room
 2. View Rooms
 3. View Account
 4. Checkout
 0. Logout
+
+Enter choice: _
         "]
         BOOK["Screen 4: Book Room"]
         ACCOUNT["Screen 3: Account Details"]
@@ -63,14 +76,16 @@ Balance: 50 credits
 ==========================================
 MSSRB - Admin Main Menu
 ==========================================
-
 Logged in as: Admin
+==========================================
 
 1. Add Room
 2. Delete Room
 3. View Rooms
 4. View Bookings
 0. Logout
+
+Enter choice: _
         "]
         ADD["Screen 7: Add Room"]
         DELETE["Screen 8: Delete Room"]
