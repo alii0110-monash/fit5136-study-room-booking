@@ -13,7 +13,7 @@ Room 101 (Woodside 101) cannot be deleted
 because it has future bookings.
 ------------------------------------------
 
-Future Bookings for this Room:
+Future Bookings:
 ------------------------------------------
 Booking ID | Student ID | Date       | Time      | Status
 BR-00003   | 33445566   | 2026-03-28 | 14:00-18:00 | CONFIRMED
@@ -24,19 +24,19 @@ BR-00005   | 33445568   | 2026-03-30 | 09:00-11:00 | PENDING
 The room cannot be deleted until all
 future bookings have been completed
 or cancelled.
-------------------------------------------
 
 Options:
-1. View Room Details
-0. Return to Admin Menu
+  1. View Room Details
+  0. Return to Admin Menu
+------------------------------------------
 
-Press [Enter] to continue...
+
     "]
 
     ADMIN(["Screen 6: Admin Menu"])
 
     DELETE_REJECTED --> DR1
-    DR1 -->|"Enter"| ADMIN
+    DR1 -->|"0"| ADMIN
 
     style DELETE_REJECTED fill:#FFB6C1,stroke:#DC143C,stroke-width:3px
     style DR1 fill:#FFB6C1,stroke:#DC143C

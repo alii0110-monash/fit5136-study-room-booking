@@ -2,21 +2,22 @@ flowchart TB
     subgraph START["[START HERE] Screen 1: Welcome"]
         W1["
 ==========================================
-MSSRB - FIT5136 Study Room Booking System
+MSSRB - Study Room Booking System
 ==========================================
 
 Welcome to the Study Room Booking System!
 Monash University - S1 2026
 
 ------------------------------------------
-1. Register - Create a new student account
-2. Login - Access existing account
-0. Exit - Close the application
+1. Register
+2. Login
+0. Exit
 ------------------------------------------
 
 
 
-Enter choice: _        "]
+Enter choice: _
+        "]
     end
 
     subgraph REGISTER["Registration"]
@@ -30,8 +31,7 @@ Email: student33445566@student.monash.edu
 
 Initial bonus: 50 credits added!
 
-------------------------------------------
-Press [Enter] to continue...
+Press [0] to return to Welcome
         "]
     end
 
@@ -43,8 +43,7 @@ Press [Enter] to continue...
 
 Invalid Student ID or Password.
 
-------------------------------------------
-Press [Enter] to try again...
+Press [0] to return to Welcome
         "]
     end
 
@@ -96,7 +95,7 @@ Enter choice: _
     START -->|"0"| EXIT["Exit"]
 
     REGISTER --> R1
-    R1 -->|"Enter"| START
+    R1 -->|"0"| START
 
     LOGIN -->|"Student"| SM
     LOGIN -->|"Admin"| AM
@@ -110,7 +109,7 @@ Enter choice: _
     BOOK -->|"0"| SM
     ACCOUNT -->|"0"| SM
     CHECKOUT -->|"0"| SM
-    VIEW_ROOMS -->|"Enter"| SM
+    VIEW_ROOMS -->|"0"| SM
 
     AM -->|"1"| ADD
     AM -->|"2"| DELETE

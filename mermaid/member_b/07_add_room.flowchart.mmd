@@ -68,7 +68,6 @@ Step 4 of 4: Price
 Enter Price per Hour ($): 15.00_
 ------------------------------------------
 Must be a positive number
-Example: 15.00
     "]
 
     AR5["
@@ -108,7 +107,7 @@ Capacity  : 4 people
 Price     : $15.00/hour
 ------------------------------------------
 Equipment List:
-1. Whiteboard
+  Whiteboard : added
 ------------------------------------------
 Enter next equipment (or 'done'): TV_
 
@@ -133,10 +132,11 @@ Equipment : Whiteboard, TV
 ------------------------------------------
 
 Options:
-1. Add another room
-0. Return to Admin Menu
+  1. Add another room
+  0. Return to Admin Menu
+------------------------------------------
 
-Enter choice: _
+
     "]
 
     AR8["
@@ -148,17 +148,14 @@ MSSRB - Add Room Error
 
 ------------------------------------------
 Room ID 101 already exists in the system.
-
 You cannot add a room with a duplicate ID.
 
-------------------------------------------
-
 Options:
-1. Enter a different Room ID
-0. Return to Admin Menu
-
+  1. Enter a different Room ID
+  0. Return to Admin Menu
 ------------------------------------------
-Press [Enter] to continue...
+
+
     "]
 
     AR9["
@@ -171,14 +168,13 @@ MSSRB - Add Room Error
 ------------------------------------------
 One or more fields contain invalid data:
 
-- Capacity must be a positive integer > 0
-- Price must be a positive number >= 0
+  Capacity: must be a positive integer > 0
+  Price: must be a positive number >= 0
 
 Please check your input and try again.
-
 ------------------------------------------
 
-Press [Enter] to continue...
+
     "]
 
     ADMIN(["Screen 6: Admin Menu"])
@@ -197,8 +193,8 @@ Press [Enter] to continue...
     AR4 -->|"Invalid"| AR9
     AR7 -->|"1"| ADD_ROOM
     AR7 -->|"0"| ADMIN
-    AR8 -->|"Enter"| ADD_ROOM
-    AR9 -->|"Enter"| ADD_ROOM
+    AR8 -->|"0"| ADD_ROOM
+    AR9 -->|"0"| ADD_ROOM
 
     style AR1 fill:#F0F0F0,stroke:#808080
     style AR2 fill:#F0F0F0,stroke:#808080

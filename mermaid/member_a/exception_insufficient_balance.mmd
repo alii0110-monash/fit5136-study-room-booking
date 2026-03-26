@@ -10,33 +10,33 @@ MSSRB - Checkout Error
 
 ------------------------------------------
 Booking Details:
+------------------------------------------
 Room        : Woodside 101
 Date        : 2026-03-28
 Time        : 14:00 - 18:00
 Total Price : $48.00
-
 ------------------------------------------
-Your Balance   : 50 credits
-Required       : 48 credits
- shortfall     : 0 credits
+
+Your Balance : 50 credits
+Required     : 48 credits
+Shortfall    : 0 credits
 
 [WARNING] Balance is just enough!
 Please confirm or cancel.
-------------------------------------------
 
+------------------------------------------
 Options:
-1. Confirm anyway
-0. Cancel and return to Main Menu
-
+  1. Confirm anyway
+  0. Return to Main Menu
 ------------------------------------------
 
-Press [Enter] to continue...
+
     "]
 
     STUDENT_MENU(["Screen 2: Student Menu"])
 
     ERROR_BALANCE --> B1
-    B1 -->|"Enter"| STUDENT_MENU
+    B1 -->|"0"| STUDENT_MENU
 
     style ERROR_BALANCE fill:#FFB6C1,stroke:#DC143C,stroke-width:3px
     style B1 fill:#FFB6C1,stroke:#DC143C

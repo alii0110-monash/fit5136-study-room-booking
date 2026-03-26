@@ -12,18 +12,19 @@ MSSRB - Registration Error
 The Student ID you entered (33445566)
 is already registered in our system.
 
-Please try one of the following:
-- Login with your existing account
-- Use a different Student ID to register
+Suggestions:
+  Login with your existing account
+  Use a different Student ID to register
 ------------------------------------------
 
-Press [Enter] to try again...
+
+Press [0] to return to Welcome
     "]
 
     WELCOME(["Screen 1: Welcome"])
 
     ERROR_ID --> E1
-    E1 -->|"Enter"| WELCOME
+    E1 -->|"0"| WELCOME
 
     style ERROR_ID fill:#FFB6C1,stroke:#DC143C,stroke-width:3px
     style E1 fill:#FFB6C1,stroke:#DC143C
